@@ -1,4 +1,5 @@
 
+
 .capa.class<-setClass("capa.class",representation(data="matrix",beta="vector",beta_tilde="numeric",min_seg_len="integer",max_seg_len="integer",max_lag="integer",type="character",
                                                   transform="function",anomaly_types="vector",anomaly_positions="vector",components="array",start_lags="array",end_lags="array"))
 
@@ -381,8 +382,8 @@ anomalies<-function(x,epoch=NULL)
 
 
 
+
 ## NOT EXPORTED - helper function for computing beta
-## TODO - original univariate code had the option of length(beta) being related to 
 compute_beta <- function(beta,type,n,p,max_lag,max_seg_len,min_seg_len){
     ## process beta
     ##n <- nrow(x)
@@ -622,7 +623,7 @@ compute_beta <- function(beta,type,n,p,max_lag,max_seg_len,min_seg_len){
 #'
 capa<-function(x,beta=NULL,beta_tilde=NULL,type=c("meanvar","mean","robustmean"),min_seg_len=10,max_seg_len=Inf,max_lag=0)
 {
-    
+
     ## data needs to be in the form of an array
     x<-to_array(x)
 
@@ -742,6 +743,7 @@ capa<-function(x,beta=NULL,beta_tilde=NULL,type=c("meanvar","mean","robustmean")
 ##             return(res)
 ##         }
 ##     },error = function(e) {print(e$message);stop();})
+
     
 ## }
 
